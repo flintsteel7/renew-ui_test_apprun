@@ -1,0 +1,63 @@
+html, body, main {
+    font-family: Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 200px 300px auto 300px;
+    grid-template-rows: 50px auto 30%;
+    grid-template-areas:
+        "team-selector left-panel top-info user"
+        "far-left-panel left-panel workspace tools"
+        "chat-menu left-panel workspace console";
+}
+
+.team-selector {
+    grid-area: team-selector;
+}
+
+.far-left-panel {
+    grid-area: far-left-panel;
+    border-right: 2px solid gainsboro;
+}
+
+.chat-menu {
+    grid-area: chat-menu;
+    border-right: 2px solid gainsboro;
+    border-top: 2px solid gainsboro;
+}
+
+.left-panel {
+    grid-area: left-panel;
+    border-right: 2px solid gainsboro;
+}
+
+.top-info {
+    grid-area: top-info;
+    border-bottom: 2px solid gainsboro;
+}
+
+.workspace {
+    grid-area: workspace;
+}
+
+.user {
+    grid-area: user;
+    border-bottom: 2px solid gainsboro;
+}
+
+.tools {
+    grid-area: tools;
+    border-left: 2px solid gainsboro;
+}
+
+.console {
+    grid-area: console;
+    border-left: 2px solid gainsboro;
+    border-top: 2px solid gainsboro;
+}
+

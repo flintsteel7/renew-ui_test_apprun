@@ -1,5 +1,36 @@
+.team-selector {
+    background-color: #292933;
+    color: gainsboro;
+    margin: 0;
+}
+
+.active-team {
+    cursor: pointer;
+    font-size: 1.5em;
+    height: 100%;
+    margin: 0;
+    padding: 8px;
+}
+
 .team-selector-list {
+    background-color: inherit;
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
+    visibility: hidden;
+    width: 200px;
     z-index: 1;
-    background-color: #fff;
+}
+
+.team-option {
+    font-size: 1.25em;
+    height: 50px;
+    padding: 10px;
+    width: inherit;
+}
+
+.team-option:hover {
+    background-color: #2F333F;
 }

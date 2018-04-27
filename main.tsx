@@ -1,40 +1,50 @@
 import app from 'apprun';
 import TeamSelector from './components/TeamSelector';
+import {toggle_visibility} from './lib/utilities'
+import './styles/main.css'
 
 app.on('debug', p => console.log(p));
 
 const model = {
   active_team: "Wordsearch",
-  team_selector: {
-    available_teams: [
-      "Wordsearch",
-      "PET",
-    ],
-    drop_down: {
-      visibility: "hidden"
-    }
-  }
-};
+  available_teams: [
+    "Wordsearch",
+    "PET",
+  ],
+}
 
-const view = state => (<div>
-  <TeamSelector
-    active_team={state.active_team}
-    drop_down_visibility={state.team_selector.drop_down.visibility}
-    available_teams={state.team_selector.available_teams}
-  />
-  <h1 onclick={() => app.run("say_hello")}>Hello World!</h1>
-  <p>{state.message}</p>
-</div>)
+const view = state => (
+  <main>
+    <TeamSelector
+      active_team={state.active_team}
+      available_teams={state.available_teams}
+    />
+    <div className="far-left-panel">
+    </div>
+    <div className="chat-menu">
+    </div>
+    <div className="left-panel">
+    </div>
+    <div className="top-info">
+    </div>
+    <div className="workspace">
+      <h1>Renew</h1>
+    </div>
+    <div className="user">
+    </div>
+    <div className="tools">
+    </div>
+    <div className="console">
+    </div>
+  </main>
+)
 
 const update = {
-  "say_hello": state => ({...state, message: "Hello to you!"}),
-  "toggle_team_selector_drop_down": state => {
-    if (state.team_selector.drop_down.visibility === "hidden") {
-      return ({...state, team_selector: {...state.team_selector, drop_down: {visibility: "visible"}}})
-    } else {
-      return ({...state, team_selector: {...state.team_selector, drop_down: {visibility: "hidden"}}})
-    }
+  "select_team": (state, team_selected, active_team_text, drop_down) => {
+    active_team_text.style.color = "gainsboro"
+    toggle_visibility(drop_down)
+    return {...state, active_team: team_selected}
   }
-};
+}
 
-app.start('main', model, view, update)
+app.start('app', model, view, update)
