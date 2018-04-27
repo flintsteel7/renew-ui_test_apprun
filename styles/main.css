@@ -8,7 +8,7 @@ html, body, main {
 
 main {
     display: grid;
-    grid-template-columns: 197px 3px 297px 3px auto 3px 297px;
+    /* grid-template-columns is set in main.tsx using model.app_layout */
     grid-template-rows: 50px auto;
     grid-template-areas:
         "team-selector far-left-resizer left-panel left-resizer top-info right-resizer user"

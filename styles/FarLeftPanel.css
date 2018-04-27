@@ -1,7 +1,7 @@
 .far-left-panel {
     display: grid;
-    grid-template-colunns: auto;
-    grid-template-rows: auto 3px 25%;
+    grid-template-columns: auto;
+    grid-template-rows: auto 3px 297px;
     grid-template-areas:
         "far-left-main-menu"
         "far-left-horz-resizer"
