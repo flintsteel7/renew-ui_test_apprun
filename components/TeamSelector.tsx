@@ -1,4 +1,4 @@
-import app from 'apprun';
+import app from 'apprun'
 import {toggle_visibility} from './../lib/utilities'
 import './../styles/TeamSelector.css'
 
@@ -7,8 +7,9 @@ const TeamSelector = ({active_team, available_teams}) => {
     <div className="team-selector">
       <p className="active-team"
          onclick={(event) => show_team_selector_list(event.srcElement)}
-         title="Active Team"
-      >{active_team}</p>
+         title="Active Team">
+        {active_team}
+      </p>
       <ul className="team-selector-list">
         {available_teams.map(team => {
             return (

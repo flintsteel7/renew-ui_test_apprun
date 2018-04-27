@@ -1,5 +1,7 @@
 import app from 'apprun';
 import TeamSelector from './components/TeamSelector';
+import FarLeftPanel from './components/FarLeftPanel';
+import FarLeftResizer from './components/FarLeftResizer';
 import {toggle_visibility} from './lib/utilities'
 import './styles/main.css'
 
@@ -19,22 +21,22 @@ const view = state => (
       active_team={state.active_team}
       available_teams={state.available_teams}
     />
-    <div className="far-left-panel">
-    </div>
-    <div className="chat-menu">
-    </div>
+    <FarLeftPanel />
+    <FarLeftResizer />
     <div className="left-panel">
+    </div>
+    <div className="left-resizer">
     </div>
     <div className="top-info">
     </div>
     <div className="workspace">
       <h1>Renew</h1>
     </div>
+    <div className="right-resizer">
+    </div>
     <div className="user">
     </div>
-    <div className="tools">
-    </div>
-    <div className="console">
+    <div className="right-panel">
     </div>
   </main>
 )

@@ -8,12 +8,11 @@ html, body, main {
 
 main {
     display: grid;
-    grid-template-columns: 200px 300px auto 300px;
-    grid-template-rows: 50px auto 30%;
+    grid-template-columns: 197px 3px 297px 3px auto 3px 297px;
+    grid-template-rows: 50px auto;
     grid-template-areas:
-        "team-selector left-panel top-info user"
-        "far-left-panel left-panel workspace tools"
-        "chat-menu left-panel workspace console";
+        "team-selector far-left-resizer left-panel left-resizer top-info right-resizer user"
+        "far-left-panel far-left-resizer left-panel left-resizer workspace right-resizer right-panel";
 }
 
 .team-selector {
@@ -22,18 +21,22 @@ main {
 
 .far-left-panel {
     grid-area: far-left-panel;
-    border-right: 2px solid gainsboro;
 }
 
-.chat-menu {
-    grid-area: chat-menu;
-    border-right: 2px solid gainsboro;
-    border-top: 2px solid gainsboro;
+.far-left-resizer {
+    grid-area: far-left-resizer;
+    background-color: #262933;
+    cursor: ew-resize;
 }
 
 .left-panel {
     grid-area: left-panel;
-    border-right: 2px solid gainsboro;
+}
+
+.left-resizer {
+    grid-area: left-resizer;
+    background-color: #262933;
+    cursor: ew-resize;
 }
 
 .top-info {
@@ -45,19 +48,18 @@ main {
     grid-area: workspace;
 }
 
+.right-resizer {
+    grid-area: right-resizer;
+    background-color: gainsboro;
+    cursor: ew-resize;
+}
+
 .user {
     grid-area: user;
     border-bottom: 2px solid gainsboro;
 }
 
-.tools {
-    grid-area: tools;
-    border-left: 2px solid gainsboro;
-}
-
-.console {
-    grid-area: console;
-    border-left: 2px solid gainsboro;
-    border-top: 2px solid gainsboro;
+.right-panel {
+    grid-area: right-panel;
 }
 

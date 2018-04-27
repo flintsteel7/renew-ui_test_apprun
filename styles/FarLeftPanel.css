@@ -1,0 +1,25 @@
+.far-left-panel {
+    display: grid;
+    grid-template-colunns: auto;
+    grid-template-rows: auto 3px 25%;
+    grid-template-areas:
+        "far-left-main-menu"
+        "far-left-horz-resizer"
+        "far-left-chat-menu";
+}
+
+.far-left-main-menu {
+    background-color: #2f333f;
+    grid-area: far-left-main-menu;
+}
+
+.far-left-horz-resizer {
+    background-color: #262933;
+    cursor: ns-resize;
+    grid-area: far-left-horz-resizer;
+}
+
+.far-left-chat-menu {
+    background-color: #2f333f;
+    grid-area: far-left-chat-menu;
+}
