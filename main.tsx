@@ -15,16 +15,16 @@ const model = {
   ],
   app_layout: {
     far_left_panel_width: "197",
-    far_left_chat_menu_height: "297px",
-    left_panel_width: "297px",
-    right_panel_width: "297px",
-    right_console_height: "347px",
+    far_left_chat_menu_height: "297",
+    left_panel_width: "297",
+    right_panel_width: "297",
+    right_console_height: "347",
   }
 }
 
 const view = state => {
   const style = {
-    "grid-template-columns": `${state.app_layout.far_left_panel_width}px 3px ${state.app_layout.left_panel_width} 3px auto 3px ${state.app_layout.right_panel_width}`,
+    "grid-template-columns": `${state.app_layout.far_left_panel_width}px 3px ${state.app_layout.left_panel_width}px 3px auto 3px ${state.app_layout.right_panel_width}px`,
   }
 
   return (
@@ -34,9 +34,7 @@ const view = state => {
         available_teams={state.available_teams}
       />
       <FarLeftPanel />
-      <FarLeftResizer
-        far_left_panel_width={state.app_layout.far_left_panel_width}
-      />
+      <FarLeftResizer />
       <div className="left-panel">
       </div>
       <div className="left-resizer">

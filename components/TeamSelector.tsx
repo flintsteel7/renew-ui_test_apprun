@@ -15,9 +15,9 @@ const TeamSelector = ({active_team, available_teams}) => {
             return (
               <li className="team-option" onclick={event => app.run(
                 "select_team",
-                event.srcElement.innerHTML,
+                event.target.innerHTML,
                 document.querySelector(".active-team"),
-                document.querySelector(".team-selector-list")
+                event.target.parentElement
               )}>{team}</li>
             )
           }
