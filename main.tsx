@@ -11,7 +11,7 @@ import './styles/main.css'
 app.on('debug', p => console.log(p));
 
 const model = {
-  active_team: "Wordsearch",
+  active_team: "B&H Direct eBooks",
   available_teams: [
     "B&H Direct eBooks",
     "Wordsearch",
