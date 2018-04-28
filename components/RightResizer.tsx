@@ -2,19 +2,19 @@ import app from 'apprun'
 import {drag_horiz_resizer} from './../lib/utilities'
 import './../styles/Resizers.css'
 
-const FarLeftResizer = () => {
+const RightResizer = () => {
   return (
-    <div className="far-left-resizer"
+    <div className="right-resizer"
          data-dragging="false"
          onmousedown={event => {
            event.target.dataset.dragging = "true"
            event.target.firstElementChild.style.display = "block"
          }}
     >
-      <div className="far-left-resizer-mousepad"
+      <div className="right-resizer-mousepad"
            onmousemove={event => {
              if (event.target.parentElement.dataset.dragging === "true") {
-               drag_horiz_resizer("far-left", event.clientX, document.querySelector("main"))
+               drag_horiz_resizer("right", window.innerWidth - event.clientX, document.querySelector("main"))
              }
            }}
            onmouseup={event => {
@@ -22,8 +22,8 @@ const FarLeftResizer = () => {
              event.target.style.display = "none"
              app.run(
                "resize_panel",
-               "far_left_panel_width",
-               event.clientX
+               "right_panel_width",
+               window.innerWidth - event.clientX
              )
            }}
       />
@@ -31,4 +31,4 @@ const FarLeftResizer = () => {
   )
 }
 
-export default FarLeftResizer
+export default RightResizer

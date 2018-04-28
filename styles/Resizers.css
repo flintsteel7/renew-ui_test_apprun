@@ -1,4 +1,6 @@
-.far-left-resizer-mousepad {
+.far-left-resizer-mousepad,
+.left-resizer-mousepad,
+.right-resizer-mousepad {
     display: none;
     position: absolute;
     height: 100%;

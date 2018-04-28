@@ -1,7 +1,9 @@
-import app from 'apprun';
-import TeamSelector from './components/TeamSelector';
-import FarLeftPanel from './components/FarLeftPanel';
-import FarLeftResizer from './components/FarLeftResizer';
+import app from 'apprun'
+import TeamSelector from './components/TeamSelector'
+import FarLeftPanel from './components/FarLeftPanel'
+import FarLeftResizer from './components/FarLeftResizer'
+import LeftResizer from './components/LeftResizer'
+import RightResizer from './components/RightResizer'
 import {toggle_visibility} from './lib/utilities'
 import './styles/main.css'
 
@@ -10,6 +12,7 @@ app.on('debug', p => console.log(p));
 const model = {
   active_team: "Wordsearch",
   available_teams: [
+    "B&H Direct eBooks",
     "Wordsearch",
     "PET",
   ],
@@ -37,15 +40,16 @@ const view = state => {
       <FarLeftResizer />
       <div className="left-panel">
       </div>
-      <div className="left-resizer">
-      </div>
+      <LeftResizer
+        // far_left_panel_width is passed in so it can be subtracted from
+        // clientX in order to get the correct width for the left panel
+        far_left_panel_width={state.app_layout.far_left_panel_width}
+      />
       <div className="top-info">
       </div>
       <div className="workspace">
-        <h1>Renew</h1>
       </div>
-      <div className="right-resizer">
-      </div>
+      <RightResizer />
       <div className="user">
       </div>
       <div className="right-panel">

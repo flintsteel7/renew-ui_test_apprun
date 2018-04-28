@@ -15,7 +15,7 @@ const TeamSelector = ({active_team, available_teams}) => {
             return (
               <li className="team-option" onclick={event => app.run(
                 "select_team",
-                event.target.innerHTML,
+                event.target.innerText,
                 document.querySelector(".active-team"),
                 event.target.parentElement
               )}>{team}</li>
@@ -28,7 +28,7 @@ const TeamSelector = ({active_team, available_teams}) => {
 }
 
 const show_team_selector_list = (active_team) => {
-  active_team.innerHTML = "Select Team"
+  active_team.innerText = "Select Team"
   active_team.style.color = "#4B4F61"
   toggle_visibility(document.querySelector(".team-selector-list"))
 }
