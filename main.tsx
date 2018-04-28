@@ -2,6 +2,7 @@ import app from 'apprun'
 import TeamSelector from './components/TeamSelector'
 import FarLeftPanel from './components/FarLeftPanel'
 import FarLeftResizer from './components/FarLeftResizer'
+import LeftPanel from './components/LeftPanel'
 import LeftResizer from './components/LeftResizer'
 import RightResizer from './components/RightResizer'
 import {toggle_visibility} from './lib/utilities'
@@ -38,8 +39,7 @@ const view = state => {
       />
       <FarLeftPanel />
       <FarLeftResizer />
-      <div className="left-panel">
-      </div>
+      <LeftPanel />
       <LeftResizer
         // far_left_panel_width is passed in so it can be subtracted from
         // clientX in order to get the correct width for the left panel
